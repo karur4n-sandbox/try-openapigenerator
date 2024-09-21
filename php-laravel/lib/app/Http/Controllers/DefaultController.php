@@ -32,6 +32,26 @@ class DefaultController extends Controller
     }
 
     /**
+     * Operation petsIdGet
+     *
+     * ペット詳細を取得する.
+     *
+     * @param string $id  (required)
+     *
+     * @return Http response
+     */
+    public function petsIdGet($id)
+    {
+        $input = Request::all();
+
+        //path params validation
+
+
+        //not path params validation
+
+        return response('How about implementing petsIdGet as a get method ?');
+    }
+    /**
      * Operation usersIdGet
      *
      * ユーザー詳細を取得する.
@@ -46,8 +66,6 @@ class DefaultController extends Controller
 
         //path params validation
 
-        // 手動で追加したコード
-        print_r($id);
 
         //not path params validation
 

@@ -57,6 +57,13 @@ Route::delete('/pet/{petId}', 'DefaultController@petPetIdDelete');
  */
 Route::get('/pet/{petId}', 'DefaultController@petPetIdGet');
 /**
+ * get petsIdGet
+ * Summary: ペット詳細を取得する
+ * Notes: 
+ * Output-Formats: [application/json]
+ */
+Route::get('/pets/{id}', 'DefaultController@petsIdGet');
+/**
  * get usersIdGet
  * Summary: ユーザー詳細を取得する
  * Notes: 
