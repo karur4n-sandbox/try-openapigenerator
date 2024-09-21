@@ -59,7 +59,8 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'status' => '\OpenAPI\Client\Model\ChatRoomListUserStatus'
+        'status' => '\OpenAPI\Client\Model\ChatRoomListUserStatus',
+        'registered_date' => '\DateTime'
     ];
 
     /**
@@ -72,7 +73,8 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'status' => null
+        'status' => null,
+        'registered_date' => 'date'
     ];
 
     /**
@@ -83,7 +85,8 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'name' => false,
-        'status' => false
+        'status' => false,
+        'registered_date' => false
     ];
 
     /**
@@ -174,7 +177,8 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'status' => 'status'
+        'status' => 'status',
+        'registered_date' => 'registered_date'
     ];
 
     /**
@@ -185,7 +189,8 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'registered_date' => 'setRegisteredDate'
     ];
 
     /**
@@ -196,7 +201,8 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'registered_date' => 'getRegisteredDate'
     ];
 
     /**
@@ -259,6 +265,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('registered_date', $data ?? [], null);
     }
 
     /**
@@ -296,6 +303,9 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
+        }
+        if ($this->container['registered_date'] === null) {
+            $invalidProperties[] = "'registered_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -389,6 +399,33 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets registered_date
+     *
+     * @return \DateTime
+     */
+    public function getRegisteredDate()
+    {
+        return $this->container['registered_date'];
+    }
+
+    /**
+     * Sets registered_date
+     *
+     * @param \DateTime $registered_date registered_date
+     *
+     * @return self
+     */
+    public function setRegisteredDate($registered_date)
+    {
+        if (is_null($registered_date)) {
+            throw new \InvalidArgumentException('non-nullable registered_date cannot be null');
+        }
+        $this->container['registered_date'] = $registered_date;
 
         return $this;
     }

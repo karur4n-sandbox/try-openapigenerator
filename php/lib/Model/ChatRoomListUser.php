@@ -60,6 +60,7 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'name' => 'string',
         'status' => '\OpenAPI\Client\Model\ChatRoomListUserStatus',
+        'registered_date' => '\DateTime',
         'note' => 'string'
     ];
 
@@ -74,6 +75,7 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'name' => null,
         'status' => null,
+        'registered_date' => 'date',
         'note' => null
     ];
 
@@ -86,6 +88,7 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
         'name' => false,
         'status' => false,
+        'registered_date' => false,
         'note' => false
     ];
 
@@ -178,6 +181,7 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'name' => 'name',
         'status' => 'status',
+        'registered_date' => 'registered_date',
         'note' => 'note'
     ];
 
@@ -190,6 +194,7 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'name' => 'setName',
         'status' => 'setStatus',
+        'registered_date' => 'setRegisteredDate',
         'note' => 'setNote'
     ];
 
@@ -202,6 +207,7 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'name' => 'getName',
         'status' => 'getStatus',
+        'registered_date' => 'getRegisteredDate',
         'note' => 'getNote'
     ];
 
@@ -265,6 +271,7 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('registered_date', $data ?? [], null);
         $this->setIfExists('note', $data ?? [], null);
     }
 
@@ -303,6 +310,9 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
+        }
+        if ($this->container['registered_date'] === null) {
+            $invalidProperties[] = "'registered_date' can't be null";
         }
         if ($this->container['note'] === null) {
             $invalidProperties[] = "'note' can't be null";
@@ -399,6 +409,33 @@ class ChatRoomListUser implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets registered_date
+     *
+     * @return \DateTime
+     */
+    public function getRegisteredDate()
+    {
+        return $this->container['registered_date'];
+    }
+
+    /**
+     * Sets registered_date
+     *
+     * @param \DateTime $registered_date registered_date
+     *
+     * @return self
+     */
+    public function setRegisteredDate($registered_date)
+    {
+        if (is_null($registered_date)) {
+            throw new \InvalidArgumentException('non-nullable registered_date cannot be null');
+        }
+        $this->container['registered_date'] = $registered_date;
 
         return $this;
     }

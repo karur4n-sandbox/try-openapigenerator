@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php-cs-fixer.dist.php
 .travis.yml
 README.md
@@ -41,17 +40,3 @@ lib/Model/User.php
 lib/Model/UsersIdGet200Response.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/DefaultApiTest.php
-test/Model/CategoryTest.php
-test/Model/ChatRoomListUserStatusTest.php
-test/Model/ChatRoomListUserTest.php
-test/Model/PetFindByStatusGet400ResponseTest.php
-test/Model/PetPetIdDelete200ResponseTest.php
-test/Model/PetPetIdGet200ResponseTest.php
-test/Model/PetPetIdGet400ResponseTest.php
-test/Model/PetPost201ResponseTest.php
-test/Model/PetPut200ResponseTest.php
-test/Model/PetTest.php
-test/Model/TagTest.php
-test/Model/UserTest.php
-test/Model/UsersIdGet200ResponseTest.php
