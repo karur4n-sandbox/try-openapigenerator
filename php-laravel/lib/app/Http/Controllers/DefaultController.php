@@ -46,6 +46,8 @@ class DefaultController extends Controller
 
         //path params validation
 
+        // 手動で追加したコード
+        print_r($id);
 
         //not path params validation
 
