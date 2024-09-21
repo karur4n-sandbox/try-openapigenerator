@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "schema-generate": "openapi-generator-cli generate -i ./schema.openapi.json -g php -o ./php"
+    "generate:php": "openapi-generator-cli generate -i ./schema.openapi.json -g php -o ./php",
+    "generate:laravel": "openapi-generator-cli generate -i ./schema.openapi.json -g php-laravel -o ./php-laravel"
   },
   "keywords": [],
   "author": "",
