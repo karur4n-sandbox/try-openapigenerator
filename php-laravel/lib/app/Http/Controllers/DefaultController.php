@@ -46,6 +46,7 @@ class DefaultController extends Controller
 
         //path params validation
 
+        print_r($id);
 
         //not path params validation
 
